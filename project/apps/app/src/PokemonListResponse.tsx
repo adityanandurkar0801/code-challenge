@@ -4,7 +4,7 @@ export interface PokemonListResponse {
   previous: string | null;
   results: PokemonEntry[];
 }
-interface PokemonEntry {
+export interface PokemonEntry {
   name: string;
   url: string;
 }

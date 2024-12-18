@@ -1,5 +1,14 @@
 Question 1: How did you manage to fetch the list and what tool did you use?
 Ans: For now i am using the fetch,  For smaller projects or when you don't need these extra features, Fetch might be enough. or we can use axios 
+
 Question 2: What steps would you take to future improve this?
 Ans: Axios offers convenience for handling HTTP requests, especially in more complex scenarios, 
 whereas Fetch is simpler and native to JavaScript. If you need advanced features like interceptors, better error handling, or request cancellation, Axios is a great choice.
+
+Question 4: What makes the createSlice in redux-toolkit difference then A Reducer in redux?
+Ans: createSlice function RTK simplifies the process of writing Redux reducers and actions, offering several advantages over Redux setup, which involves manually defining action creators, types, and reducers.
+reduces boilerplate, improves the developer experience with automatic action type generation, simplifies store setup
+
+Question 5: Describe the benefits of immutable code.
+Ans:  immutability provides a clear, safe, and predictable way to handle data, especially in complex applications where state is shared across many components or processes.
+Immutable data avoids issues with concurrent access and mutation. Supports the functional programming, such as pure functions.
