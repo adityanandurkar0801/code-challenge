@@ -1,5 +1,18 @@
 import React from 'react'
-
-export const List = ({pokemonData}) => {
-  return <p>List</p>
+import { PokemonListResponse } from '../../../apps/app/src/PokemonListResponse';
+interface pokemonDataProps{
+  pokemonData: PokemonListResponse | null;
+}
+export const List = (props: pokemonDataProps) => {
+  const { pokemonData = []} = props;
+  return (
+  <div>
+    <p>List</p>
+     {pokemonData?.results?.map((pokemon, index) => (
+        <div key={index}>
+          <span>{pokemon?.name}</span>
+        </div>
+      ))}
+    </div>
+    )
 }
