@@ -1,5 +1,5 @@
 import React from 'react'
 
-export const List = () => {
+export const List = ({pokemonData}) => {
   return <p>List</p>
 }
