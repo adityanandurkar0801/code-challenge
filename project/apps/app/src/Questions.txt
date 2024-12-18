@@ -1,0 +1,5 @@
+Question 1: How did you manage to fetch the list and what tool did you use?
+Ans: For now i am using the fetch,  For smaller projects or when you don't need these extra features, Fetch might be enough. or we can use axios 
+Question 2: What steps would you take to future improve this?
+Ans: Axios offers convenience for handling HTTP requests, especially in more complex scenarios, 
+whereas Fetch is simpler and native to JavaScript. If you need advanced features like interceptors, better error handling, or request cancellation, Axios is a great choice.
