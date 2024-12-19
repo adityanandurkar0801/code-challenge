@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { PokemonListResponse } from '../../../../apps/app/src/PokemonListResponse';
 import './PokemonCard.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { storePokemon } from '../../redux/pokemonSlice';
+import { storePokemon, removePokemon } from '../../redux/pokemonSlice';
 
 const api = "https://pokeapi.co/api/v2/pokemon?limit=151";
 
@@ -30,6 +30,10 @@ export const List = () => {
     getData();
   }, []);
 
+  const handleRemovePokemon = (pokemonName: string) => {
+    dispatch(removePokemon(pokemonName)); // Dispatch the remove action with the Pokémon's name
+  };
+
   if (loading) {
     return <div className="loading">Loading Pokémon...</div>;
   }
@@ -42,6 +46,7 @@ export const List = () => {
       {pokemons?.map((pokemon) => (
         <div key={pokemon.id} className="pokemon-card">
           <h3>{pokemon.name}</h3>
+          <button className="remove-button" onClick={() => handleRemovePokemon(pokemon.name)}>🗑️Remove</button>
         </div>
       ))}
     </div>

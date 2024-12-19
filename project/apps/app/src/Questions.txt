@@ -12,3 +12,6 @@ reduces boilerplate, improves the developer experience with automatic action typ
 Question 5: Describe the benefits of immutable code.
 Ans:  immutability provides a clear, safe, and predictable way to handle data, especially in complex applications where state is shared across many components or processes.
 Immutable data avoids issues with concurrent access and mutation. Supports the functional programming, such as pure functions.
+
+Question 6: How can you verify the action has been dispatched?
+Ans: we can use redux-dev tool browser extension, reducer logging, middleware logging can log every action dispatched, making it easy to verify them in the console, unit testing and component debugging.
