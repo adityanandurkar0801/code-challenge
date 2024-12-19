@@ -15,3 +15,61 @@ Immutable data avoids issues with concurrent access and mutation. Supports the f
 
 Question 6: How can you verify the action has been dispatched?
 Ans: we can use redux-dev tool browser extension, reducer logging, middleware logging can log every action dispatched, making it easy to verify them in the console, unit testing and component debugging.
+
+Question 7: explain the use of useEffect hook in React
+Ans: useEffect hook is used to handle side effects in functional components. some of the side effects include tasks such as:
+fetching data from an API,subscribing to or cleaning up event listeners, interacting with the DOM
+useEffect runs after the component renders. it also uses dependency array
+Empty Array []: Runs only once on mount.
+Dependencies [stateVar]: Runs when specified stateVar change
+Cleanup Function: If you return a function, it cleans up effects (removes listeners)
+example: 
+ useEffect(() => {
+    console.log('comp mounted or count changed');
+
+    return () => {
+      console.log('cleanup during unmounting');
+    };
+  }, [count]);
+
+
+Question 8: What is A High Order Component?
+Ans: HOC is an advanced React pattern where a function takes a component and returns a new component with enhanced functionality.
+const EnhancedComponent = higherOrderComponent(WrappedComponent);
+HOCs do not modify the original component.
+They wrap the component to add additional behavior (e.g., props, state, logic).
+
+const withAdditionalFunctionality = (WrappedComponent) => {
+  return (props) => {
+    console.log('Props:', props);
+    return <WrappedComponent {...props} />;
+  };
+};
+
+const MyComponent = (props) => <div>{props.name}</div>;
+const EnhancedComponent = withAdditionalFunctionality(MyComponent);
+
+Question 9: What use cases would a HOC be usefull?
+Ans: HOC are useful for cases where code reusability or logic sharing is needed. common use cases:
+Authentication, logging, data fetching, conditional rendering etc.
+
+Question 10: What does it indicate when a component is prefixed with use and with
+Ans: "use" is recognized as a custom hook or a built-in React hook. e.g, useFetchData
+"with" prefix is a naming convention that signals a HOC providing additional capabilities to the wrapped component e.g withAuth 
+
+Question 11: What is a Generic type in typescript?
+Ans: allows you to write reusable and type-safe code that works with multiple types without losing type information.
+it provides flexibility: code works with various data types.
+type safety: ensures strong typing while being reusable.
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+const output = identity<string>("Hello");
+here T can accept any type which we passed
+
+Question 12: Whats the difference between a controlled and uncontrolled input in React?
+Ans: in controlled input value is controlled by React state. value and onChange props to manage the input.
+in uncontrolled input value is not controlled by React state. instead, you access the value directly through a ref.
+<input ref={inputRef} placeholder="Uncontrolled" />
+<input value={value} onChange={(e) => setValue(e.target.value)} placeholder="Controlled" />
